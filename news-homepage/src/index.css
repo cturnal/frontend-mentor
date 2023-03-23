@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@layer base {
+  li {
+    @apply text-darkGrayishBlue hover:text-softRed;
+  }
+  p {
+    @apply text-darkGrayishBlue text-[15px] leading-6 tracking-wide;
+  }
+  h1 {
+    @apply text-veryDarkBlue;
+  }
+}
