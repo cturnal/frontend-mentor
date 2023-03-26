@@ -3,7 +3,7 @@ import ThankYou from './ThankYou';
 
 function CardForm({ values, handleChange, setValues }) {
   const [focused, setFocused] = useState(false);
-  const [submitted, setSubmitted] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
