@@ -22,7 +22,7 @@ function Card({ values }) {
               className='absolute top-5 mr-[220px] w-[50px] md:left-10 lg:left-5 lg:top-68 lg:w-[70px]'
             />
 
-            <p className='absolute top-20  mr-[45px] md:left-10 lg:left-5 lg:top-[120px] md:top-[110px] md:text-[27px] text-[20px] w-56 md:w-auto'>
+            <p className='absolute top-20  mr-[30px] md:left-10 lg:left-5 lg:top-[120px] md:top-[110px] md:text-[27px] text-[20px] w-60 md:w-auto'>
               {values.card
                 ? values.card.replace(/(\d{4})/g, '$1 ')
                 : '0000 0000 0000 0000'}
