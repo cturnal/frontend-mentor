@@ -22,12 +22,9 @@ const links = [
   },
 ];
 
-function Features({ featureRef, setToggle }) {
+function Features({ setToggle }) {
   return (
-    <div
-      className='md:absolute left-20 lg:left-36  top-16 bg-white px-5 pt-5 rounded-lg w-[160px] md:drop-shadow-2xl  text-MediumGray '
-      ref={featureRef}
-    >
+    <div className='md:absolute left-20 lg:left-28  top-16 bg-white px-5 pt-5 rounded-lg w-[160px] md:drop-shadow-2xl  text-MediumGray tracking-wider '>
       <ul>
         {links.map((link) => (
           <li key={link.title} onClick={() => setToggle(false)}>

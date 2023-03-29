@@ -10,12 +10,9 @@ const links = [
   },
 ];
 
-function Company({ companyRef, setToggle }) {
+function Company({ setToggle }) {
   return (
-    <div
-      className='md:absolute  left-64 lg:left-80  top-16 bg-white px-5 py-4 rounded-lg w-[120px] md:drop-shadow-2xl text-MediumGray'
-      ref={companyRef}
-    >
+    <div className='md:absolute  left-64  lg:left-72  top-16 bg-white px-5 py-4 rounded-lg w-[120px] md:drop-shadow-2xl text-MediumGray tracking-wide'>
       <ul>
         {links.map((link) => (
           <li key={link.title} onClick={() => setToggle(false)}>
