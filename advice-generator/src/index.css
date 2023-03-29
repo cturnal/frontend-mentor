@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+  background-color: hsl(218, 23%, 16%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:hover.dice-shadow {
+  box-shadow: 0 0 40px 1px hsl(150, 100%, 66%);
+}
