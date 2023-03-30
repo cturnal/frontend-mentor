@@ -116,35 +116,26 @@ function App() {
               </div>
               <div className='flex items-center justify-between md:flex-col md:justify-start md:items-start md:w-40'>
                 <p className='text-2xl md:text-5xl font-light mb-2 '>
-                  {periodicals.daily &&
-                    (info.timeframes.daily.current > 1
-                      ? info.timeframes.daily.current + 'hrs'
-                      : '1hr')}
-                  {periodicals.weekly &&
-                    (info.timeframes.weekly.current > 1
-                      ? info.timeframes.weekly.current + 'hrs'
-                      : '1hr')}
-                  {periodicals.monthly &&
-                    (info.timeframes.monthly.current > 1
-                      ? info.timeframes.monthly.current + 'hrs'
-                      : '1hr')}
+                  {['daily', 'weekly', 'monthly'].map(
+                    (periodical) =>
+                      periodicals[periodical] &&
+                      `${
+                        info.timeframes[periodical].current > 1
+                          ? info.timeframes[periodical].current + 'hrs'
+                          : '1hr'
+                      }`
+                  )}
                 </p>
                 <p className='text-PaleBlue mb-2 text-xs lg:text-[18px]'>
-                  {periodicals.daily &&
-                    (info.timeframes.daily.previous > 1
-                      ? 'Last Day - ' + info.timeframes.daily.previous + 'hrs'
-                      : 'Last Day - 1hr')}
-                  {periodicals.weekly &&
-                    (info.timeframes.weekly.previous > 1
-                      ? 'Last Week - ' + info.timeframes.weekly.previous + 'hrs'
-                      : 'Last Week - 1hr')}
-                  {periodicals.monthly &&
-                    (info.timeframes.monthly.previous > 1
-                      ? 'Last Month - ' +
-                        info.timeframes.monthly.previous +
-                        'hrs'
-                      : 'Last Month - 1hr')}
-                  {}
+                  {['daily', 'weekly', 'monthly'].map(
+                    (periodical) =>
+                      periodicals[periodical] &&
+                      `${
+                        info.timeframes[periodical].previous > 1
+                          ? info.timeframes[periodical].previous + 'hrs'
+                          : '1hr'
+                      }`
+                  )}
                 </p>
               </div>
             </div>
