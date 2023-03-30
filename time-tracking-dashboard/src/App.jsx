@@ -10,7 +10,11 @@ import self from './assets/images/icon-self-care.svg';
 import exercise from './assets/images/icon-exercise.svg';
 import data from './assets/data.json';
 
-const periodicalItem = ['daily', 'weekly', 'monthly'];
+const periodicalItem = [
+  { name: 'daily', subName: 'Day' },
+  { name: 'weekly', subName: 'Week' },
+  { name: 'monthly', subName: 'Month' },
+];
 
 function App() {
   const [periodicals, setPeriodicals] = useState({
@@ -28,8 +32,8 @@ function App() {
   };
 
   return (
-    <main className='flex flex-col md:flex-row md:justify-center md:items-center w-full h-full px-5  gap-5 '>
-      <div className='md:w-64 flex flex-col md:mb-20 '>
+    <main className='flex flex-col md:flex-row md:justify-center items-center w-full h-full px-5  gap-5 '>
+      <div className='max-w-[350px] w-full md:w-64 flex flex-col md:mb-10'>
         <div className='relative top-14 rounded-lg bg-Blue p-6 text-PaleBlue flex items-center md:flex-col md:items-start '>
           <img
             src={profile}
@@ -47,14 +51,14 @@ function App() {
         <div className='mt-12 md:mt-9 md:mb-14 md:h-36 rounded-b-lg bg-Darkblue '>
           <ul className='md:px-7 py-5 flex md:flex-col  justify-evenly md:justify-end gap-2 md:h-full'>
             {periodicalItem.map((periodical) => (
-              <li key={periodical}>
+              <li key={periodical.name}>
                 <button
-                  onClick={() => handleClick(periodical)}
+                  onClick={() => handleClick(periodical.name)}
                   className={`text-Desaturatedblue capitalize hover:text-white ${
-                    periodicals[periodical] ? 'text-white ' : ' '
+                    periodicals[periodical.name] ? 'text-white ' : ' '
                   }`}
                 >
-                  {periodical}
+                  {periodical.name}
                 </button>
               </li>
             ))}
@@ -62,7 +66,7 @@ function App() {
         </div>
       </div>
 
-      <div className='flex flex-col md:flex-row md:flex-wrap md:w-[840px] gap-5 w-full pb-20'>
+      <div className='flex flex-col md:flex-row md:flex-wrap max-w-[350px] md:max-w-[840px]  gap-5 w-full pb-10 '>
         {data.map((info) => (
           <div className='basis-none md:basis-1/4  flex-1 ' key={info.icon}>
             <div
@@ -92,14 +96,14 @@ function App() {
                   <img src={ellipsis} alt='ellipsis' />
                 </button>
               </div>
-              <div className='flex items-center justify-between md:flex-col md:justify-start md:items-start md:w-40'>
+              <div className='flex items-center justify-between md:flex-col md:justify-start md:items-start md:w-36 lg:w-40'>
                 <p className='text-2xl md:text-5xl font-light mb-2 '>
                   {periodicalItem.map(
                     (periodical) =>
-                      periodicals[periodical] &&
+                      periodicals[periodical.name] &&
                       `${
-                        info.timeframes[periodical].current > 1
-                          ? info.timeframes[periodical].current + 'hrs'
+                        info.timeframes[periodical.name].current > 1
+                          ? info.timeframes[periodical.name].current + 'hrs'
                           : '1hr'
                       }`
                   )}
@@ -107,11 +111,15 @@ function App() {
                 <p className='text-PaleBlue mb-2 text-xs lg:text-[18px]'>
                   {periodicalItem.map(
                     (periodical) =>
-                      periodicals[periodical] &&
+                      periodicals[periodical.name] &&
                       `${
-                        info.timeframes[periodical].previous > 1
-                          ? info.timeframes[periodical].previous + 'hrs'
-                          : '1hr'
+                        info.timeframes[periodical.name].previous > 1
+                          ? 'Last ' +
+                            periodical.subName +
+                            ' - ' +
+                            info.timeframes[periodical.name].previous +
+                            'hrs'
+                          : 'Last ' + periodical.subName + ' - 1hr'
                       }`
                   )}
                 </p>
