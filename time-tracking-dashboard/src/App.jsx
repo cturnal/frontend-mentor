@@ -1,5 +1,11 @@
 import profile from './assets/images/image-jeremy.png';
 import ellipsis from './assets/images/icon-ellipsis.svg';
+import work from './assets/images/icon-work.svg';
+import study from './assets/images/icon-study.svg';
+import play from './assets/images/icon-play.svg';
+import social from './assets/images/icon-social.svg';
+import self from './assets/images/icon-self-care.svg';
+import exercise from './assets/images/icon-exercise.svg';
 import data from './assets/data.json';
 
 import { useState } from 'react';
@@ -88,7 +94,7 @@ function App() {
               <div
                 className='h-10 md:h-14  bg-no-repeat bg-right '
                 style={{
-                  backgroundImage: `url("${info.icon}")`,
+                  backgroundImage: `url(${eval(info.icon)})`,
                 }}
               ></div>
             </div>
