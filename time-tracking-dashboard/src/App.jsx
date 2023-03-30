@@ -50,10 +50,8 @@ function App() {
               <li key={periodical}>
                 <button
                   onClick={() => handleClick(periodical)}
-                  className={`${
-                    periodicals[periodical]
-                      ? 'text-white'
-                      : 'text-Desaturatedblue hover:text-white capitalize'
+                  className={`text-Desaturatedblue capitalize hover:text-white ${
+                    periodicals[periodical] ? 'text-white ' : ' '
                   }`}
                 >
                   {periodical}
