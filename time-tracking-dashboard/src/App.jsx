@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import profile from './assets/images/image-jeremy.png';
 import ellipsis from './assets/images/icon-ellipsis.svg';
 import work from './assets/images/icon-work.svg';
@@ -8,7 +10,7 @@ import self from './assets/images/icon-self-care.svg';
 import exercise from './assets/images/icon-exercise.svg';
 import data from './assets/data.json';
 
-import { useState } from 'react';
+const periodicalItem = ['daily', 'weekly', 'monthly'];
 
 function App() {
   const [periodicals, setPeriodicals] = useState({
@@ -44,42 +46,20 @@ function App() {
 
         <div className='mt-12 md:mt-9 md:mb-14 md:h-36 rounded-b-lg bg-Darkblue '>
           <ul className='md:px-7 py-5 flex md:flex-col  justify-evenly md:justify-end gap-2 md:h-full'>
-            <li>
-              <button
-                onClick={() => handleClick('daily')}
-                className={`${
-                  periodicals.daily
-                    ? 'text-white'
-                    : 'text-Desaturatedblue hover:text-white'
-                }`}
-              >
-                Daily
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleClick('weekly')}
-                className={`${
-                  periodicals.weekly
-                    ? 'text-white'
-                    : 'text-Desaturatedblue hover:text-white'
-                }`}
-              >
-                Weekly
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleClick('monthly')}
-                className={`${
-                  periodicals.monthly
-                    ? 'text-white'
-                    : 'text-Desaturatedblue hover:text-white'
-                }`}
-              >
-                Monthly
-              </button>
-            </li>
+            {periodicalItem.map((periodical) => (
+              <li key={periodical}>
+                <button
+                  onClick={() => handleClick(periodical)}
+                  className={`${
+                    periodicals[periodical]
+                      ? 'text-white'
+                      : 'text-Desaturatedblue hover:text-white capitalize'
+                  }`}
+                >
+                  {periodical}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -116,7 +96,7 @@ function App() {
               </div>
               <div className='flex items-center justify-between md:flex-col md:justify-start md:items-start md:w-40'>
                 <p className='text-2xl md:text-5xl font-light mb-2 '>
-                  {['daily', 'weekly', 'monthly'].map(
+                  {periodicalItem.map(
                     (periodical) =>
                       periodicals[periodical] &&
                       `${
@@ -127,7 +107,7 @@ function App() {
                   )}
                 </p>
                 <p className='text-PaleBlue mb-2 text-xs lg:text-[18px]'>
-                  {['daily', 'weekly', 'monthly'].map(
+                  {periodicalItem.map(
                     (periodical) =>
                       periodicals[periodical] &&
                       `${
