@@ -94,7 +94,15 @@ function App() {
               <div
                 className='h-10 md:h-14  bg-no-repeat bg-right '
                 style={{
-                  backgroundImage: `url(${eval(info.icon)})`,
+                  backgroundImage: `url(${
+                    (info.icon === 'work' && work) ||
+                    (info.icon === 'play' && play) ||
+                    (info.icon === 'study' && study) ||
+                    (info.icon === 'exercise' && exercise) ||
+                    (info.icon === 'social' && social) ||
+                    (info.icon === 'self' && self)
+                  }
+                  )`,
                 }}
               ></div>
             </div>
