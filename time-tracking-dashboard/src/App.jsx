@@ -20,8 +20,8 @@ function App() {
   };
 
   return (
-    <main className='flex flex-col md:flex-row md:justify-center md:items-center w-full p-5  gap-5 '>
-      <div className='md:w-64 flex flex-col mt-40 md:mt-0  '>
+    <main className='flex flex-col md:flex-row md:justify-center md:items-center w-full h-full px-5  gap-5 '>
+      <div className='md:w-64 flex flex-col md:mb-20 '>
         <div className='relative top-14 rounded-lg bg-Blue p-6 text-PaleBlue flex items-center md:flex-col md:items-start '>
           <img
             src={profile}
@@ -78,7 +78,7 @@ function App() {
         </div>
       </div>
 
-      <div className='flex flex-col md:flex-row md:flex-wrap md:w-[840px] gap-5 w-full '>
+      <div className='flex flex-col md:flex-row md:flex-wrap md:w-[840px] gap-5 w-full pb-20'>
         {data.map((info) => (
           <div className='basis-none md:basis-1/4  flex-1 ' key={info.icon}>
             <div
