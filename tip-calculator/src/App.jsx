@@ -15,7 +15,7 @@ const FormInput = ({
 }) => {
   return (
     <div className={`${className} relative`}>
-      <label className='text-Verydarkcyan/70 font-bold text-sm md:text-[16px]'>
+      <label className='text-Verydarkcyan/70 font-bold text-sm md:text-[16px] h-full'>
         {label}
       </label>
 
@@ -36,7 +36,9 @@ const FormInput = ({
       />
       <span
         className={`text-xs capitalize text-orange-600 absolute ${
-          colored ? 'bottom-24 w-40' : 'right-0 top-1'
+          colored
+            ? 'bottom-[137px] md:bottom-[107px] right-3 '
+            : 'right-3 top-1'
         } font-bold  hidden ${focused && `peer-invalid:block`}`}
       >
         Can't be zero
