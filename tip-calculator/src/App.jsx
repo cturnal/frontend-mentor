@@ -80,8 +80,8 @@ function App() {
 
   return (
     <main>
-      <section className='h-full'>
-        <h1 className='text-center text-Verydarkcyan/70 tracking-[7px] flex flex-col text-2xl font-bold '>
+      <section>
+        <h1 className='text-center text-Verydarkcyan/70 tracking-[7px] flex flex-col text-2xl font-bold mt-10'>
           SPLI<span>TTER</span>
         </h1>
 
