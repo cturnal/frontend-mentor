@@ -5,7 +5,7 @@ function FormInput(props) {
     <div className='flex flex-col gap-1 '>
       <input
         {...rest}
-        className={`md:text-[32px] w-full border  rounded-md px-4 py-2 placeholder:text-Smokeygrey focus:border-Purple hover:border-Purple outline-none cursor-pointer
+        className={`md:text-[32px] w-auto border  rounded-md px-4 py-2 placeholder:text-Smokeygrey focus:border-Purple hover:border-Purple outline-none cursor-pointer
         peer 
         ${error === '' && 'border-Lightred'}
         ${focused ? 'invalid:border-Lightred' : 'border-Lightgrey'}`}
@@ -16,15 +16,14 @@ function FormInput(props) {
         required
       />
       <label
-        className={`order-first text-Smokeygrey  
-         ${error === '' && 'text-Lightred'} 
-        ${focused && 'peer-invalid:text-Lightred'}`}
+        className={`order-first   
+         ${error === '' ? 'text-Lightred' : 'text-Smokeygrey'} 
+        ${focused ? 'peer-invalid:text-Lightred' : 'text-Smokeygrey'}`}
       >
         {label}
       </label>
       <span
         className={`text-Lightred font-normal italic text-[12px]  hidden 
-        ${error === '' && 'border-Lightred'}
         ${focused && 'peer-invalid:block'}
         `}
       >

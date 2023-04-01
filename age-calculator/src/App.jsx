@@ -31,9 +31,11 @@ function App() {
     ).getDate();
     if (values.day > daysInMonth) {
       const updateInfo = inputInfo.map((info, index) => {
-        if (index === 0)
+        if (index === 0) {
           return { ...info, max: daysInMonth, error: 'Must be a valid date' };
-        if (index === 1 || index === 2) return { ...info, error: '' };
+        } else if (index === 1 || index === 2) {
+          return { ...info, error: '' };
+        }
         return info;
       });
       setInputInfo(updateInfo);
@@ -78,7 +80,9 @@ function App() {
             <React.Fragment key={period}>
               <p className='text-4xl md:text-8xl  italic font-extrabold'>
                 <span className='text-Purple'>
-                  {age[period] ? age[period] + ' ' : '- -'}
+                  {age[period] || (age[period] == 0 && '0')
+                    ? age[period] + ' '
+                    : '- -'}
                 </span>
                 {period}
               </p>
