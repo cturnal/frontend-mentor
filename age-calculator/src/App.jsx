@@ -7,11 +7,7 @@ function App() {
   const [inputInfo, setInputInfo] = useState(inputs);
   const [focused, setFocused] = useState(false);
 
-  const [age, setAge] = useState({
-    years: '',
-    months: '',
-    days: '',
-  });
+  const [age, setAge] = useState({});
   const [values, setValues] = useState({
     day: '',
     month: '',
@@ -29,6 +25,7 @@ function App() {
       Number(values.month),
       0
     ).getDate();
+
     if (values.day > daysInMonth) {
       const updateInfo = inputInfo.map((info, index) => {
         if (index === 0) {
@@ -38,6 +35,7 @@ function App() {
         }
         return info;
       });
+      setAge({});
       setInputInfo(updateInfo);
     } else {
       setAge({
@@ -51,7 +49,7 @@ function App() {
     <main className='w-full md:w-auto max-w-[480px] md:max-w-full'>
       <section className='bg-White p-4 md:p-10 shadow-sm rounded-xl rounded-br-[200px] mx-3'>
         <form onSubmit={handleSubmit}>
-          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap'>
+          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap mt-10 md:mt-0'>
             {inputInfo.map((input) => (
               <FormInput
                 key={input.id}

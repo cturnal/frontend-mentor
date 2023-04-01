@@ -2,7 +2,7 @@ function FormInput(props) {
   const { label, error, onChange, id, focused, setFocused, ...rest } = props;
 
   return (
-    <div className='flex flex-col gap-1 w-20 md:w-auto mt-10 md:mt-0 '>
+    <div className='flex flex-col gap-1 w-20 md:w-auto  '>
       <input
         {...rest}
         className={`md:text-[32px]  w-20 md:w-auto  border  rounded-md px-4 py-2 placeholder:text-Smokeygrey focus:border-Purple hover:border-Purple outline-none cursor-pointer
