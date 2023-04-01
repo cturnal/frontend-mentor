@@ -15,7 +15,7 @@ const FormInput = ({
 }) => {
   return (
     <div className={`${className} relative`}>
-      <label className='text-Verydarkcyan/70 font-bold text-sm md:text-[16px] h-full'>
+      <label className='text-Verydarkcyan/70 font-bold text-sm md:text-[16px] '>
         {label}
       </label>
 
@@ -80,7 +80,7 @@ function App() {
 
   return (
     <main>
-      <section>
+      <section className='h-full'>
         <h1 className='text-center text-Verydarkcyan/70 tracking-[7px] flex flex-col text-2xl font-bold '>
           SPLI<span>TTER</span>
         </h1>
