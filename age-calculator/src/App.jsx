@@ -49,9 +49,9 @@ function App() {
   };
   return (
     <main className='w-full md:w-auto max-w-[480px] md:max-w-full'>
-      <section className='bg-White p-10 shadow-sm rounded-xl rounded-br-[200px] mx-3'>
+      <section className='bg-White p-4 md:p-10 shadow-sm rounded-xl rounded-br-[200px] mx-3'>
         <form onSubmit={handleSubmit}>
-          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest '>
+          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap'>
             {inputInfo.map((input) => (
               <FormInput
                 key={input.id}
@@ -75,7 +75,7 @@ function App() {
             </button>
           </div>
         </form>
-        <div className=' space-y-3'>
+        <div className=' space-y-3 mb-10'>
           {periods.map((period) => (
             <React.Fragment key={period}>
               <p className='text-4xl md:text-8xl  italic font-extrabold'>
