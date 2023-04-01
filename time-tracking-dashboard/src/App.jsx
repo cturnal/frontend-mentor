@@ -108,7 +108,7 @@ function App() {
                       }`
                   )}
                 </p>
-                <p className='text-PaleBlue mb-2 text-xs lg:text-[18px]'>
+                <p className='text-PaleBlue mb-2 text-xs lg:text-[18px] justify-items-end text-right'>
                   {periodicalItem.map(
                     (periodical) =>
                       periodicals[periodical.name] &&
