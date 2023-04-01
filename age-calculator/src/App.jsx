@@ -46,7 +46,7 @@ function App() {
     }
   };
   return (
-    <main className='w-full md:w-auto max-w-[480px] md:max-w-full'>
+    <main className='w-full md:w-auto max-w-[480px] md:max-w-4xl'>
       <section className='bg-White p-4 md:p-10 shadow-sm rounded-xl rounded-br-[200px] mx-3 w-auto'>
         <form onSubmit={handleSubmit}>
           <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap mt-10 md:mt-0'>
