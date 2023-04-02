@@ -46,10 +46,10 @@ function App() {
     }
   };
   return (
-    <main className='w-full md:w-auto max-w-[480px] md:max-w-4xl'>
-      <section className='bg-White p-4 md:p-10 shadow-sm rounded-xl rounded-br-[200px] mx-3 w-auto'>
+    <main className='w-full mx-2'>
+      <section className='flex flex-col justify-center bg-White p-4 md:p-10 shadow-sm rounded-xl rounded-br-[100px] md:rounded-br-[200px]  max-w-[480px] md:max-w-[780px] mx-auto'>
         <form onSubmit={handleSubmit}>
-          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap mt-10 md:mt-0'>
+          <div className='flex md:gap-7 gap-2 justify-center md:justify-start tracking-widest flex-wrap md:flex-nowrap mt-10 md:mt-0'>
             {inputInfo.map((input) => (
               <FormInput
                 key={input.id}
@@ -76,7 +76,7 @@ function App() {
         <div className=' space-y-3 mb-10'>
           {periods.map((period) => (
             <React.Fragment key={period}>
-              <p className='text-4xl md:text-8xl  italic font-extrabold'>
+              <p className='text-5xl md:text-8xl  italic font-extrabold'>
                 <span className='text-Purple'>
                   {age[period] || (age[period] == 0 && '0')
                     ? age[period] + ' '

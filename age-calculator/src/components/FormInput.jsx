@@ -2,10 +2,10 @@ function FormInput(props) {
   const { label, error, onChange, id, focused, setFocused, ...rest } = props;
 
   return (
-    <div className='flex flex-col gap-1 w-20 md:w-auto  '>
+    <div className='flex flex-col gap-1 w-20  md:w-40  '>
       <input
         {...rest}
-        className={`md:text-[32px]  w-20 md:w-auto  border  rounded-md px-4 py-2 placeholder:text-Smokeygrey focus:border-Purple hover:border-Purple outline-none cursor-pointer
+        className={`md:text-[32px]    border  rounded-md px-4 py-2 placeholder:text-Smokeygrey focus:border-Purple hover:border-Purple outline-none cursor-pointer
         peer 
         ${error === '' && 'border-Lightred'}
         ${focused ? 'invalid:border-Lightred' : 'border-Lightgrey'}`}
