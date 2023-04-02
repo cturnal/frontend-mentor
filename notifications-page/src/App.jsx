@@ -7,7 +7,7 @@ function App() {
     useNotification();
 
   return (
-    <div className=' bg-white1 shadow-lg  rounded-lg  m-auto p-5 max-w-[710px]'>
+    <div className=' bg-white1 shadow-lg  rounded-lg   p-5 max-w-[710px] my-10 flex flex-col justify-center'>
       <Header
         notificationData={notificationData}
         handleReadAll={handleReadAll}

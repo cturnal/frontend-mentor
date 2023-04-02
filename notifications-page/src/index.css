@@ -4,5 +4,17 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-[100dvh] bg-gray-100 flex justify-center items-center m-auto font-plusJakarta;
+  @apply h-[100%]  bg-gray-100 flex justify-center items-center m-auto font-plusJakarta;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
